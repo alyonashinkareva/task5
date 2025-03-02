@@ -1,0 +1,162 @@
+:root {
+    --default-font: "Harry Potter Regular", sans-serif;
+    --default-text-color: #241605;
+    --changed-default-text-color: #59273c;
+    --date-color: #2416056f;
+    --pink-button-color: #f5d3e1;
+    --beige-button-color: #e5d7c5;
+}
+
+@font-face {
+    font-family: "Harry Potter Regular";
+    src: url("font/harrypotterTitle.ttf") format("opentype");
+}
+
+.paper {
+    font: 1.5em var(--default-font);
+    color: var(--default-text-color);
+    margin: 0;
+    padding: 20px;
+    background-image: url("images/background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    line-height: 1.6;
+}
+
+.item:checked ~ .paper {
+    color: var(--changed-default-text-color);
+    background-image: url("images/pink_paper.jpg");
+}
+
+.item:checked ~ .button {
+    background-color: var(--pink-button-color);
+}
+
+#btnControl {
+    display: none;
+}
+
+.button {
+    width: 100%;
+    height: 3rem;
+    border-radius: 5px;
+    display: block;
+    text-align: center;
+    background-color: var(--beige-button-color);
+    background-image: none;
+    font: 3rem var(--default-font);
+}
+
+.item {
+    display: none;
+}
+
+header {
+    font: 2.5em var(--default-font);
+    text-align: center;
+    margin-top: 0;
+    -webkit-text-stroke: 1px black;
+}
+
+header h1 {
+    margin: 0 auto;
+    padding: 0;
+    border: 2px dashed var(--default-text-color);
+}
+
+header .date {
+    font-size: 0.5em;
+    color: var(--date-color);
+    margin-bottom: 0;
+}
+
+.main-article {
+    margin-top: 0;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 1em;
+}
+
+.column {
+    flex: 1 1 33%;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+@media screen and (max-width: 1200px) {
+    .column {
+        flex: 1 1 50%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .column {
+        flex: 1 1 100%;
+    }
+}
+
+.main-article h2 {
+    font-size: 2em;
+    margin-bottom: 0;
+}
+
+.main-article article span {
+    display: inline-block;
+}
+
+.main-article article span::first-letter {
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.main-article article {
+    margin-top: 0;
+}
+
+.main-article blockquote {
+    border-left: 0.5rem solid;
+    border-left-color: #302a23c9;
+    font-style: italic;
+    margin: 0.4rem;
+    padding: 0.4rem 1rem;
+    position: relative;
+}
+
+.main-article blockquote:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -0.5rem;
+    height: 4.8rem;
+    background-color: #f5ede4;
+    width: 0.5rem;
+    margin-top: -1em;
+}
+
+.main-article blockquote:after {
+    content: "”";
+    position: absolute;
+    top: 50%;
+    left: -0.9rem;
+    color: #302a23;
+    font-family: Times, sans-serif;
+    font-weight: bold;
+}
+
+.main-article blockquote cite {
+    color: #302a23;
+    padding-top: 0.4rem;
+    display: block;
+    text-align: right;
+}
+
+.main-article .important-info {
+    font-weight: initial;
+    border: 2px dashed var(--default-text-color);
+}
+
+.main-article .family-day .media-family-day {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 4rem;
+}
